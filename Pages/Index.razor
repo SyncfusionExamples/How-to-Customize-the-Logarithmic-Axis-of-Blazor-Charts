@@ -1,0 +1,42 @@
+﻿@page "/"
+
+    <SfChart Title="Profit Growth of the Product">
+        <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.DateTime" Title="Years"
+                           LabelFormat="yyyy" EdgeLabelPlacement="EdgeLabelPlacement.Shift">
+        </ChartPrimaryXAxis>
+        <ChartPrimaryYAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Logarithmic"
+                           Title="Profit" Maximum="1000000" Minimum="1" Interval="2"
+                           LogBase="2" LabelFormat="${value}">
+        </ChartPrimaryYAxis>
+        <ChartSeriesCollection>
+            <ChartSeries Type="ChartSeriesType.Line" DataSource="@ChartData" XName="Date" YName="Value">
+                <ChartMarker Visible="true" Height="7" Width="7"></ChartMarker>
+            </ChartSeries>
+        </ChartSeriesCollection>
+    </SfChart>
+
+@code {
+
+    public class ChartDataModel
+    {
+        public DateTime Date { get; set; }
+        public double Value { get; set; }
+    }
+
+    List<ChartDataModel> ChartData = new List<ChartDataModel>
+    {
+        new ChartDataModel { Date = new DateTime(2011, 1, 1), Value = 80 },
+        new ChartDataModel { Date = new DateTime(2012, 1, 1), Value = 200 },
+        new ChartDataModel { Date = new DateTime(2013, 1, 1), Value = 400 },
+        new ChartDataModel { Date = new DateTime(2014, 1, 1), Value = 600 },
+        new ChartDataModel { Date = new DateTime(2015, 1, 1), Value = 700 },
+        new ChartDataModel { Date = new DateTime(2016, 1, 1), Value = 1400 },
+        new ChartDataModel { Date = new DateTime(2017, 1, 1), Value = 2000 },
+        new ChartDataModel { Date = new DateTime(2018, 1, 1), Value = 4000},
+        new ChartDataModel { Date = new DateTime(2019, 1, 1), Value = 6000 },
+        new ChartDataModel { Date = new DateTime(2020, 1, 1), Value = 8000 },
+        new ChartDataModel { Date = new DateTime(2021, 1, 1), Value = 11000 }
+
+    };
+}
+
