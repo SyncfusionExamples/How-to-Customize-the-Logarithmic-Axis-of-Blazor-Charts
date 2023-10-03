@@ -1,19 +1,19 @@
 ﻿@page "/"
 
-    <SfChart Title="Profit Growth of the Product">
-        <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.DateTime" Title="Years"
-                           LabelFormat="yyyy" EdgeLabelPlacement="EdgeLabelPlacement.Shift">
-        </ChartPrimaryXAxis>
-        <ChartPrimaryYAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Logarithmic"
-                           Title="Profit" Maximum="1000000" Minimum="1" Interval="2"
-                           LogBase="2" LabelFormat="${value}">
-        </ChartPrimaryYAxis>
-        <ChartSeriesCollection>
-            <ChartSeries Type="ChartSeriesType.Line" DataSource="@ChartData" XName="Date" YName="Value">
-                <ChartMarker Visible="true" Height="7" Width="7"></ChartMarker>
-            </ChartSeries>
-        </ChartSeriesCollection>
-    </SfChart>
+<SfChart Title="Profit Growth of the Product">
+    <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.DateTime" Title="Years"
+                       LabelFormat="yyyy" EdgeLabelPlacement="EdgeLabelPlacement.Shift">
+    </ChartPrimaryXAxis>
+    <ChartPrimaryYAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Logarithmic"
+                       Title="Profit" Maximum="1000000" Minimum="1" Interval="2"
+                       LogBase="2" LabelFormat="${value}">
+    </ChartPrimaryYAxis>
+    <ChartSeriesCollection>
+        <ChartSeries Type="ChartSeriesType.Line" DataSource="@ChartData" XName="Date" YName="Value">
+            <ChartMarker Visible="true" Height="7" Width="7"></ChartMarker>
+        </ChartSeries>
+    </ChartSeriesCollection>
+</SfChart>
 
 @code {
 
